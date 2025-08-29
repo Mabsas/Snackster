@@ -92,6 +92,7 @@
     <Content Include="TemplateFiles\js\jquery-3.4.1.min.js" />
     <Content Include="User\Default.aspx" />
     <Content Include="User\Menu.aspx" />
+    <Content Include="User\SliderUserControl1.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,8 +111,16 @@
     <Compile Include="User\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\SliderUserControl1.ascx.cs">
+      <DependentUpon>SliderUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SliderUserControl1.ascx.designer.cs">
+      <DependentUpon>SliderUserControl1.ascx</DependentUpon>
+    </Compile>
     <Compile Include="User\User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User\User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>

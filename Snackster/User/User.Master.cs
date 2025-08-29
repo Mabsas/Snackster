@@ -11,6 +11,19 @@ namespace Snackster.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Request.Url.AbsoluteUri.ToString().Contains("Default.aspx"))
+            {
+                form1.Attributes.Add("class", "sub_page");
+            }
+            else
+            {
+                form1.Attributes.Remove("class");
+                //Load SLider for Home/Default page
+                Control slideUserControl = (Control)Page.LoadControl("SliderUserControl1.ascx");
+
+                //Add the control to the panel
+                pnlSliderUC.Controls.Add(slideUserControl);
+            }
 
         }
     }
