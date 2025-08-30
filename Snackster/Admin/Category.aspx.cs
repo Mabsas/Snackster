@@ -61,41 +61,41 @@ namespace Snackster.Admin
                 isValidToExectue = true;
             }
 
-            //if (isValidToExectue)
-            //{
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    try
-            //    {
+            if (isValidToExectue)
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
 
-            //        con.Open();
-            //        cmd.ExecuteNonQuery();
-            //        actionName = categoryId == 0 ? "inserted" : "updated";
-            //        lblMsg.Visible = true;
-            //        lblMsg.Text = "Category" + actionName + "successfully";
-            //        lblMsg.CssClass = "alert alert-success";
-            //        // getCategories();
-            //        clear();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        lblMsg.Visible = true;
-            //        lblMsg.Text = "Error-" + ex.Message;
-            //        lblMsg.CssClass = "alert alert-danger";
-            //    }
-            //    finally
-            //    {
-            //        con.Close();
-            //    }
-            //}
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    actionName = categoryId == 0 ? "inserted" : "updated";
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Category" + actionName + "successfully";
+                    lblMsg.CssClass = "alert alert-success";
+                    // getCategories();
+                    clear();
+                }
+                catch (Exception ex)
+                {
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Error-" + ex.Message;
+                    lblMsg.CssClass = "alert alert-danger";
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
 
         }
 
-        //private void clear()
-        //{
-        //    txtName.Text = string.Empty;
-        //    cblIsActive.Checked = false;
-        //    hdnId.Value = "0";
-        //    btnAddOrUpdate.Text = "Add";
-        //}
+        private void clear()
+        {
+            txtName.Text = string.Empty;
+            cblIsActive.Checked = false;
+            hdnId.Value = "0";
+            btnAddOrUpdate.Text = "Add";
+        }
     }
 }
