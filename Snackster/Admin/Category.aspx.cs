@@ -12,9 +12,9 @@ namespace Snackster.Admin
 {
     public partial class Category : System.Web.UI.Page
     {
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataAdapter sda;
+        SqlConnection con;         //con → database connection
+        SqlCommand cmd;           //cmd → SQL command (insert/update/select)
+        SqlDataAdapter sda;    //sda + dt → usually for SELECT queries
         DataTable dt;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,8 +28,8 @@ namespace Snackster.Admin
             string actionName = string.Empty, imagePath = string.Empty, fileExtension = string.Empty;
             bool isValidToExectue = false;
             int categoryId = Convert.ToInt32(hdnId.Value);
-            con = new SqlConnection(Connection.GetConnectionString());
-            cmd = new SqlCommand("Category_Crud", con);
+            con = new SqlConnection(Connection.GetConnectionString());   
+            cmd = new SqlCommand("Category_Crud", con);                  
             cmd.Parameters.AddWithValue("@Action", categoryId == 0 ? "INSERT" : "UPDATE");
             cmd.Parameters.AddWithValue("@CategoryId", categoryId);
             cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
