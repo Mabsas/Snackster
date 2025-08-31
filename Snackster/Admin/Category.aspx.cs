@@ -114,7 +114,7 @@ namespace Snackster.Admin
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-            clear();
+            clear();// I am tanim
         }
     }
 }
