@@ -82,6 +82,40 @@
 
 
                                         </div>
+
+
+
+
+                                         <div class="col-sm-6 col-md-8 col-lg-8  mobile-inputs">
+                                                <h4 class="sub-title">Category  Lists</h4>
+                                             <div class="card-block table-border-style">
+                                                 <div class="table-responsive">
+                                                     <asp:Repeater ID="rCategory" runat="server">
+                                                         <HeaderTemplate>
+                                                             <table>
+                                                                 <tr>
+                                                                     <th class="table-plus">Name</th>
+                                                                      <th>Image</th>
+                                                                      <th>IsActive</th>
+                                                                      <th>CreatedDate</th>
+                                                                      <th>Action</th>
+                                                                 </tr>
+                                                             </table>
+                                                         </HeaderTemplate>
+                                                         <ItemTemplate>
+                                                             <tr>
+                                                                 <td><%# Eval("Name") %> </td>
+                                                                  <td><%# Eval("ImageUrl") %> </td>
+                                                                  <td><%# Eval("IsActive") %> </td>
+                                                                  <td><%# Eval("CreatedDate") %> </td>
+                                                                  <td></td>
+                                                             </tr>
+                                                         </ItemTemplate>
+                                                     </asp:Repeater>
+                                                 </div>
+                                             </div>
+                                             </div>
+
                                     </div>
                                 </div>
                             </div>

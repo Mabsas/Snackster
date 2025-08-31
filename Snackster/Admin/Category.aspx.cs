@@ -100,8 +100,8 @@ namespace Snackster.Admin
             sda = new SqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
-            //rCategory.DataSource = dt;
-            //rCategory.DataBind();
+            rCategory.DataSource = dt;
+            rCategory.DataBind();
         }
 
         private void clear()
