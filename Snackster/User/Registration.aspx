@@ -43,6 +43,55 @@
                                     ControlToValidate="txtName">
                                 </asp:RegularExpressionValidator>
                             </div>
+
+
+
+                            <div>
+   <div>
+    <asp:TextBox 
+        ID="txtUserName" 
+        runat="server" 
+        CssClass="form-control" 
+        placeholder="Enter Username" 
+        ToolTip="Username">
+    </asp:TextBox>
+
+    <asp:RequiredFieldValidator 
+        ID="rfvUserNameRequired" 
+        runat="server" 
+        ErrorMessage="Username is required" 
+        ControlToValidate="txtUserName" 
+        ForeColor="Red" 
+        Display="Dynamic" 
+        SetFocusOnError="true">
+    </asp:RequiredFieldValidator>
+
+    <asp:RegularExpressionValidator 
+        ID="rfvUsername" 
+        runat="server" 
+        ErrorMessage="Username must be in characters only" 
+        ControlToValidate="txtUserName"  
+        ValidationExpression="^[a-zA-Z]+$" 
+        ForeColor="Red" 
+        Display="Dynamic" 
+        SetFocusOnError="true">
+    </asp:RegularExpressionValidator>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         </div>
                     </div>
 
