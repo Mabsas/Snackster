@@ -82,6 +82,43 @@
 
 
 
+<div>
+    <asp:TextBox 
+        ID="txtEmail" 
+        runat="server" 
+        CssClass="form-control" 
+        placeholder="Enter Email" 
+        ToolTip="Email">
+    </asp:TextBox>
+
+    <!-- Required Email -->
+    <asp:RequiredFieldValidator 
+        ID="rfvEmailRequired" 
+        runat="server" 
+        ErrorMessage="Email is required" 
+        ControlToValidate="txtEmail" 
+        ForeColor="Red" 
+        Display="Dynamic" 
+        SetFocusOnError="true">
+    </asp:RequiredFieldValidator>
+
+    <!-- Regex Email -->
+    <asp:RegularExpressionValidator 
+        ID="revEmail" 
+        runat="server" 
+        ErrorMessage="Please enter a valid email address" 
+        ControlToValidate="txtEmail"  
+        ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" 
+        ForeColor="Red" 
+        Display="Dynamic" 
+        SetFocusOnError="true">
+    </asp:RegularExpressionValidator>
+</div>
+
+
+
+
+
 
 
 
