@@ -119,6 +119,49 @@
 
 
 
+<div>
+    <asp:TextBox 
+        ID="txtMobile" 
+        runat="server" 
+        CssClass="form-control" 
+        placeholder="Enter Mobile Number" 
+        ToolTip="Mobile Number">
+    </asp:TextBox>
+
+    <asp:RequiredFieldValidator 
+        ID="rfvMobile" 
+        runat="server" 
+        ErrorMessage="Mobile No. required" 
+        ControlToValidate="txtMobile" 
+        ForeColor="Red" 
+        Display="Dynamic" 
+        SetFocusOnError="true">
+    </asp:RequiredFieldValidator>
+
+   <asp:RegularExpressionValidator 
+    ID="revMobile" 
+    runat="server" 
+    ErrorMessage="Mobile No must have 11 digits only" 
+    ControlToValidate="txtMobile" 
+    ValidationExpression="^[0-9]{11}$" 
+    ForeColor="Red" 
+    Display="Dynamic" 
+    SetFocusOnError="true">
+</asp:RegularExpressionValidator>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
