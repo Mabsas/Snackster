@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 
 namespace Snackster
@@ -30,6 +32,24 @@ namespace Snackster
                 }
             }
             return isValid;
+        }
+
+        //setting default image if there is no image for any job
+
+        public static string GetImageUrl(object url)
+        {
+            string url1 = " ";
+
+            if (string.IsNullOrEmpty(url.ToString()) || url == DBNull.Value  )
+            {
+                url1 = "../Images/No_image.png";
+            }
+            else
+            {
+                url1 = string.Format("../{0}", url);
+            }
+
+            return url1;
         }
     }
 }

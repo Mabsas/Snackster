@@ -2,6 +2,7 @@ CREATE DATABASE FoodieDB
 
 USE FoodieDB
 
+GO
 CREATE TABLE [Users](
 	[UserId] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NULL,

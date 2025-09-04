@@ -3,63 +3,64 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE Category_Crud
-    -- Add the parameters for the stored procedure here
+USE FoodieDB;
+GO
+
+
+IF OBJECT_ID('dbo.Category_Crud', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.Category_Crud;
+GO
+
+CREATE PROCEDURE dbo.Category_Crud
     @Action VARCHAR(10),
     @CategoryId INT = NULL,
     @Name VARCHAR(100) = NULL,
-    @IsActive BIT = false,
+    @IsActive BIT = 0,
     @ImageUrl VARCHAR(MAX) = NULL
 AS
 BEGIN
-    -- SET NOCOUNT ON added to prevent extra result sets from
-    -- interfering with SELECT statements.
     SET NOCOUNT ON;
 
-    --SELECT
+    -- SELECT
     IF @Action = 'SELECT'
     BEGIN
-        SELECT * FROM dbo.Categories ORDER BY CreatedDate DESC
+        SELECT * FROM dbo.Categories ORDER BY CreatedDate DESC;
     END
 
-    --INSERT
+    -- INSERT
     IF @Action = 'INSERT'
     BEGIN
-        INSERT INTO dbo.Categories(Name, ImageUrl, IsActive, CreatedDate)
-        VALUES (@Name, @ImageUrl, @IsActive, GETDATE())
+        INSERT INTO dbo.Categories (Name, ImageUrl, IsActive, CreatedDate)
+        VALUES (@Name, @ImageUrl, @IsActive, GETDATE());
     END
 
-    --UPDATE
+    -- UPDATE
     IF @Action = 'UPDATE'
     BEGIN
-        DECLARE @UPDATE_IMAGE VARCHAR(20)
-        SELECT @UPDATE_IMAGE = (CASE WHEN @ImageUrl IS NULL THEN 'NO' ELSE 'YES' END)
-        IF @UPDATE_IMAGE = 'NO'
+        IF @ImageUrl IS NULL
         BEGIN
             UPDATE dbo.Categories
             SET Name = @Name, IsActive = @IsActive
-            WHERE CategoryId = @CategoryId
+            WHERE CategoryId = @CategoryId;
         END
-     ELSE
+        ELSE
         BEGIN
             UPDATE dbo.Categories
             SET Name = @Name, ImageUrl = @ImageUrl, IsActive = @IsActive
-            WHERE CategoryId = @CategoryId
+            WHERE CategoryId = @CategoryId;
         END
     END
 
-    --DELETE
+    -- DELETE
     IF @Action = 'DELETE'
     BEGIN
-        DELETE FROM dbo.Categories WHERE CategoryId = @CategoryId
+        DELETE FROM dbo.Categories WHERE CategoryId = @CategoryId;
     END
 
-    --GETBYID
+    -- GETBYID
     IF @Action = 'GETBYID'
     BEGIN
-        SELECT * FROM dbo.Categories WHERE CategoryId = @CategoryId
+        SELECT * FROM dbo.Categories WHERE CategoryId = @CategoryId;
     END
-
-
 END
 GO

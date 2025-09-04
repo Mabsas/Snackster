@@ -69,11 +69,35 @@
   <ItemGroup>
     <Content Include="Admin\Category.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Product.aspx" />
     <Content Include="assets\css\animate.css\css\animate.css" />
     <Content Include="assets\css\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\css\jquery.mCustomScrollbar.css" />
     <Content Include="assets\css\morris.js\css\morris.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\datatables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\datatables\css\icon-font.min.css" />
+    <Content Include="assets\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="assets\datatables\css\responsive.bootstrap4.min.css" />
+    <Content Include="assets\datatables\css\responsive.dataTables.min.css" />
+    <Content Include="assets\datatables\images\sort_asc.png" />
+    <Content Include="assets\datatables\images\sort_asc_disabled.png" />
+    <Content Include="assets\datatables\images\sort_both.png" />
+    <Content Include="assets\datatables\images\sort_desc.png" />
+    <Content Include="assets\datatables\images\sort_desc_disabled.png" />
+    <Content Include="assets\datatables\js\buttons.bootstrap4.min.js" />
+    <Content Include="assets\datatables\js\buttons.flash.min.js" />
+    <Content Include="assets\datatables\js\buttons.html5.min.js" />
+    <Content Include="assets\datatables\js\buttons.print.min.js" />
+    <Content Include="assets\datatables\js\datatable-setting.js" />
+    <Content Include="assets\datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\datatables\js\dataTables.buttons.min.js" />
+    <Content Include="assets\datatables\js\dataTables.responsive.min.js" />
+    <Content Include="assets\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="assets\datatables\js\jszip.min.js" />
+    <Content Include="assets\datatables\js\pdfmake.min.js" />
+    <Content Include="assets\datatables\js\responsive.bootstrap4.min.js" />
+    <Content Include="assets\datatables\js\vfs_fonts.js" />
     <Content Include="assets\icon\icofont\css\icofont.css" />
     <Content Include="assets\icon\icofont\fonts\icofont.svg" />
     <Content Include="assets\icon\themify-icons\fonts\themify.svg" />
@@ -155,6 +179,7 @@
     <Content Include="assets\pages\widget\amchart\serial.min.js" />
     <Content Include="assets\pages\widget\amchart\worldLow.js" />
     <Content Include="assets\pages\widget\amchart\worldLow.min.js" />
+    <Content Include="Images\User\Profile.aspx" />
     <Content Include="TemplateFiles\css\bootstrap.css" />
     <Content Include="TemplateFiles\css\font-awesome.min.css" />
     <Content Include="TemplateFiles\css\responsive.css" />
@@ -182,6 +207,7 @@
     <Content Include="User\Contact.aspx" />
     <Content Include="User\Default.aspx" />
     <Content Include="User\Menu.aspx" />
+    <Content Include="User\Registration.aspx" />
     <Content Include="User\SliderUserControl1.ascx" />
     <Content Include="User\WebUserControl1.ascx" />
     <Content Include="Web.config" />
@@ -208,7 +234,21 @@
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
+    <Compile Include="Images\User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Images\User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -237,6 +277,13 @@
     </Compile>
     <Compile Include="User\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\SliderUserControl1.ascx.cs">
       <DependentUpon>SliderUserControl1.ascx</DependentUpon>
@@ -268,6 +315,10 @@
     <Content Include="assets\icon\themify-icons\fonts\themify.eot" />
     <Content Include="assets\icon\themify-icons\fonts\themify.ttf" />
     <Content Include="assets\icon\themify-icons\fonts\themify.woff" />
+    <Content Include="assets\datatables\fonts\ionicons.ttf" />
+    <Content Include="assets\datatables\fonts\ionicons.woff" />
+    <Content Include="assets\datatables\fonts\themify.ttf" />
+    <Content Include="assets\datatables\fonts\themify.woff" />
     <None Include="packages.config" />
     <Content Include="TemplateFiles\css\style.css.map" />
     <Content Include="TemplateFiles\css\style.scss" />
@@ -284,6 +335,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Category\" />
+    <Folder Include="Images\Product\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
