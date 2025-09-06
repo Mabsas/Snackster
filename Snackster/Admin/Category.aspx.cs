@@ -48,8 +48,17 @@ namespace Snackster.Admin
                 {
                     Guid obj = Guid.NewGuid();
                     fileExtension = Path.GetExtension(fuCategoryImage.FileName);
-                    imagePath = "Images/Category/" + obj.ToString() + fileExtension;
-                    fuCategoryImage.PostedFile.SaveAs(Server.MapPath("~/Images/Category") + obj.ToString() + fileExtension);
+                    string fileName = obj.ToString() + fileExtension;
+
+                    string folderPath = Server.MapPath("~/Images/Category/");
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
+
+                    fuCategoryImage.PostedFile.SaveAs(Path.Combine(folderPath, fileName));
+
+                    imagePath = "Images/Category/" + fileName;
                     cmd.Parameters.AddWithValue("@ImageUrl", imagePath);
                     isValidToExectue = true;
                 }
@@ -59,14 +68,13 @@ namespace Snackster.Admin
                     lblMsg.Text = "Please select .jpg, .jpeg or .png image";
                     lblMsg.CssClass = "alert alert-danger";
                     isValidToExectue = false;
-
-
                 }
             }
             else
             {
                 isValidToExectue = true;
             }
+
 
             if (isValidToExectue)
             {
