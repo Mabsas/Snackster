@@ -70,6 +70,8 @@
                             </div>
                         </div>
 
+                         <!-- Category Search -->
+
                         <!-- Category List -->
                         <div class="col-sm-6 col-md-8 col-lg-8 mobile-inputs">
                             <h4 class="sub-title">Category Lists</h4>
