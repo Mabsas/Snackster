@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="Snackster.Admin.Category" %>
+
 <%@ Import Namespace="Snackster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -70,15 +71,14 @@
                             </div>
                         </div>
 
-                         <!-- Category Search -->
+                        <!-- Category Search -->
 
                         <!-- Category List -->
                         <div class="col-sm-6 col-md-8 col-lg-8 mobile-inputs">
                             <h4 class="sub-title">Category Lists</h4>
                             <div class="card-block table-border-style">
                                 <div class="table-responsive">
-                                    <asp:Repeater ID="rCategory" runat="server"  OnItemCommand="rCategory_ItemCommand" OnItemDataBound="rCategory_ItemDataBound"
-                                    >
+                                    <asp:Repeater ID="rCategory" runat="server" OnItemCommand="rCategory_ItemCommand" OnItemDataBound="rCategory_ItemDataBound">
                                         <HeaderTemplate>
                                             <table class="table data-table-export table-hover nowrap">
 
@@ -97,51 +97,51 @@
                                         <ItemTemplate>
                                             <tr>
                                                 <td class="table-plus"><%# Eval("Name") %></td>
-                                               <td>
-    <img alt="Category" width="40"
-         src='<%# Utils.GetImageUrl(Eval("ImageUrl").ToString()) %>' />
-</td>
+                                                <td>
+                                                    <img alt="Category" width="40"
+                                                        src='<%# Utils.GetImageUrl(Eval("ImageUrl").ToString()) %>' />
+                                                </td>
 
 
-                                              <!--  <td><%# Eval("IsActive") %></td>
+                                                <!--  <td><%# Eval("IsActive") %></td>
                                                 <td><%# Eval("CreatedDate", "{0:dd-MMM-yyyy}") %></td>
                                                 <td></td>
                                                 -->
 
-                                              <td>
-    <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("IsActive") %>'></asp:Label>
-</td>
-<td>
-    <%# Eval("CreatedDate", "{0:dd-MMM-yyyy}") %>
-</td>
-<td>
-    <asp:LinkButton 
-        ID="lnkEdit" 
-        runat="server" 
-        Text="Edit" 
-        CssClass="badge badge-primary" 
-        CommandName="edit" 
-        CommandArgument='<%# Eval("CategoryId") %>'>
-        <i class="ti-pencil"></i>
-    </asp:LinkButton>
+                                                <td>
+                                                    <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("IsActive") %>'></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <%# Eval("CreatedDate", "{0:dd-MMM-yyyy}") %>
+                                                </td>
+                                                <td>
+                                                    <asp:LinkButton
+                                                        ID="lnkEdit"
+                                                        runat="server"
+                                                        Text="Edit"
+                                                        CssClass="badge badge-primary"
+                                                        CommandName="edit"
+                                                        CommandArgument='<%# Eval("CategoryId") %>'>
+                                                         <i class="ti-pencil"></i>
+                                                    </asp:LinkButton>
 
-    <asp:LinkButton 
-        ID="lnkDelete" 
-        runat="server" 
-        Text="Delete" 
-        CssClass="badge badge-danger" 
-        CommandName="delete" 
-        CommandArgument='<%# Eval("CategoryId") %>' 
-        OnClientClick="return confirm('Do you want to delete this category?');">
-        <i class="ti-trash"></i>
-    </asp:LinkButton>
-</td>
+                                                    <asp:LinkButton
+                                                        ID="lnkDelete"
+                                                        runat="server"
+                                                        Text="Delete"
+                                                        CssClass="badge badge-danger"
+                                                        CommandName="delete"
+                                                        CommandArgument='<%# Eval("CategoryId") %>'
+                                                        OnClientClick="return confirm('Do you want to delete this category?');">
+                                                           <i class="ti-trash"></i>
+                                                    </asp:LinkButton>
+                                                </td>
 
                                             </tr>
                                         </ItemTemplate>
 
                                         <FooterTemplate>
-                                                </tbody>
+                                            </tbody>
                                             </table>
                                         </FooterTemplate>
                                     </asp:Repeater>
