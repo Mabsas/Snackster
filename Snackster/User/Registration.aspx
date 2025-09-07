@@ -10,8 +10,10 @@
             var lbl = document.getElementById("<%=lblMsg.ClientID%>");
             if (lbl) lbl.style.display = "none";
         }, seconds * 1000);
-    }
+    };
+</script>
 
+<script>
     function ImagePreview(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
