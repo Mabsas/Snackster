@@ -75,7 +75,7 @@
 
 
                         <div class="form-group">
-                            <label>Product Price($)</label>
+                            <label>Product Price(Tk)</label>
                             <asp:TextBox ID="txtPrice" runat="server" CssClass="form-control"
                                 placeholder="Enter Product Price"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
