@@ -19,6 +19,7 @@
                                         <img src="<%# Utils.GetImageUrl(Eval("ImageUrl"))%>" alt="">
                                             </a>
                                     </div>
+                                    
                                     <div class="detail-box">
                                         <h5><%# Eval("Name") %>
                                         </h5>

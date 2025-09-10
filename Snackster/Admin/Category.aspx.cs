@@ -17,7 +17,7 @@ namespace Snackster.Admin
         SqlCommand cmd;           //cmd → SQL command (insert/update/select)
         SqlDataAdapter sda;    //sda + dt → usually for SELECT queries
         DataTable dt;
-
+        //zarif
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
