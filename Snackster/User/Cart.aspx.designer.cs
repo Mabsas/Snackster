@@ -11,7 +11,7 @@ namespace Snackster.User
 {
 
 
-    public partial class Menu
+    public partial class Cart
     {
 
         /// <summary>
@@ -22,23 +22,5 @@ namespace Snackster.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMsg;
-
-        /// <summary>
-        /// rCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rCategory;
-
-        /// <summary>
-        /// rProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rProducts;
     }
 }
