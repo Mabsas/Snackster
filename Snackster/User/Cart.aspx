@@ -34,7 +34,7 @@
                             <asp:Label ID="lblName" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
                         </td>
                         <td>
-                            <img width="60" src="<%# Utils.GetImageUrl("ImageUrl") %>" alt="" />
+                            <img width="60" src="<%# Utils.GetImageUrl(Eval("ImageUrl")) %>" alt="" />
                         </td>
                         <td>
                             $<asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
