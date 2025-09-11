@@ -81,7 +81,7 @@
                         </td>
                         <td>
                              <asp:LinkButton ID="lbCheckout" runat="server" CommandName="checkout" CssClass="btn btn-success">
-                             <i class="fa fa-arrow-circle-right mr-2"></i>Checkout
+                             <i class="fa fa-arrow-circle-right ml-2"></i>Checkout
                                </asp:LinkButton>
                         </td>
                     </tr>

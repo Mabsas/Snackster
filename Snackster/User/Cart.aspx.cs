@@ -58,6 +58,16 @@ namespace Snackster.User
 
         protected void rCartItem_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                Label totalPrice = e.Item.FindControl("lblTotalPrice") as Label;
+                Label productPrice = e.Item.FindControl("lblPrice") as Label;
+                TextBox quantity = e.Item.FindControl("txtQuantity") as TextBox;
+                decimal calTotalPrice = Convert.ToDecimal(productPrice.Text) * Convert.ToDecimal(quantity.Text);
+                totalPrice.Text = calTotalPrice.ToString();
+                grandTotal += calTotalPrice;
+            }
+            Session["grandTotalPrice"] = grandTotal;
 
         }
 
