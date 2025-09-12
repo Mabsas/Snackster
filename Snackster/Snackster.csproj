@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -180,6 +184,7 @@
     <Content Include="assets\pages\widget\amchart\serial.min.js" />
     <Content Include="assets\pages\widget\amchart\worldLow.js" />
     <Content Include="assets\pages\widget\amchart\worldLow.min.js" />
+    <Content Include="itextsharp.dll" />
     <Content Include="TemplateFiles\css\bootstrap.css" />
     <Content Include="TemplateFiles\css\font-awesome.min.css" />
     <Content Include="TemplateFiles\css\responsive.css" />

@@ -293,3 +293,4 @@ D:\ss\Snackster\Snackster\bin\roslyn\vbc.exe.config
 D:\ss\Snackster\Snackster\bin\roslyn\vbc.rsp
 D:\ss\Snackster\Snackster\bin\roslyn\VBCSCompiler.exe
 D:\ss\Snackster\Snackster\bin\roslyn\VBCSCompiler.exe.config
+D:\ss\Snackster\Snackster\bin\itextsharp.dll
