@@ -75,7 +75,7 @@
                             <a href="Menu.aspx" class="btn btn -info"><i class="fa fa-arrow-circle-left mr-2"></i>Continue Shopping</a>
                         </td>
                         <td>
-                            <asp:LinkButton ID="lbUpdateCart" runat="server" CommandName="UpdateCart" CssClass="btn btn-warning">
+                            <asp:LinkButton ID="lbUpdateCart" runat="server" CommandName="updateCart" CssClass="btn btn-warning">
                                 <i class="fa fa-refresh mr-2"></i>Update Cart
                             </asp:LinkButton>
                         </td>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Snackster.Admin;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -24,6 +25,7 @@ namespace Snackster
     {
         SqlConnection con;
         SqlCommand cmd;
+        SqlDataAdapter sda;
 
         public static bool IsValidExtension(string fileName)
         {
@@ -76,6 +78,7 @@ namespace Snackster
             }
             catch (Exception ex)
             {
+                isUpdated = false;
                System.Web.HttpContext.Current.Response.Write("<script>alert('Error-" + ex.Message + "');<script>");
             }
             finally
@@ -83,6 +86,18 @@ namespace Snackster
                 con.Close();
             }
             return isUpdated;
+        }
+        public int cartCount(int userId)
+        {
+            con = new SqlConnection(Connection.GetConnectionString());
+            cmd = new SqlCommand("Cart_Crud", con);
+            cmd.Parameters.AddWithValue("@Action", "SELECT");
+            cmd.Parameters.AddWithValue("@UserId", userId);
+            cmd.CommandType = CommandType.StoredProcedure;
+            sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);   
+            return dt.Rows.Count;
         }
     }
 }

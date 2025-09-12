@@ -53,6 +53,67 @@ namespace Snackster.User
 
         protected void rCartItem_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            Utils utils = new Utils();
+            if(e.CommandName =="remove")
+            {
+                con = new SqlConnection(Connection.GetConnectionString());
+                cmd = new SqlCommand("Cart_Crud", con);
+                cmd.Parameters.AddWithValue("@Action", "DELETE");
+                cmd.Parameters.AddWithValue("@ProductId",e.CommandArgument);
+                cmd.Parameters.AddWithValue("@UserId", Session["userId"]);
+                cmd.CommandType = CommandType.StoredProcedure;
+                try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                 getCartItems();
+                    Session["cartCount"] = utils.cartCount(Convert.ToInt32(Session["userId"]));
+                
+            }
+            catch (Exception ex)
+            {
+              Response.Write("<script>alert('Error-" + ex.Message + "');<script>");
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+          }
+            if(e.CommandName == "updateCart")
+            {
+                bool isCartUpdated=false;
+                for (int item = 0; item < rCartItem.Items.Count;item++)
+                {
+                    if (rCartItem.Items[item].ItemType == ListItemType.Item || rCartItem.Items[item].ItemType == ListItemType.AlternatingItem)
+                    {
+                        TextBox quantity = rCartItem.Items[item].FindControl("txtQuantity") as TextBox;
+                        HiddenField _productId = rCartItem.Items[item].FindControl("hdnProductId") as HiddenField;
+                        HiddenField _quantity = rCartItem.Items[item].FindControl("hdnQuantity") as HiddenField;
+                        int quantityFromCart = Convert.ToInt32(quantity.Text);
+                        int ProductId=Convert.ToInt32(_productId.Value);
+                        int quantityFromDB = Convert.ToInt32(_quantity.Value);
+                        bool isTrue = false;
+                        int updatedQuantity = 1;
+                        if(quantityFromCart> quantityFromDB)
+                        {
+                            updatedQuantity = quantityFromCart;
+                            isTrue = true;
+                        }
+                        else if(quantityFromCart<quantityFromDB)
+                        {
+                            updatedQuantity = quantityFromCart;
+                            isTrue=true;
+                        }
+                        if(isTrue)
+                        {
+                            isCartUpdated = utils.updateCartQuantity(updatedQuantity, ProductId, Convert.ToInt32(Session["userId"]));
+                        }
+                    }
+                }
+                getCartItems();
+            }
 
         }
 
