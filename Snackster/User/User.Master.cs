@@ -28,10 +28,13 @@ namespace Snackster.User
             if (Session["userId"] != null)
             {
                 lbLoginOrLogout.Text = "Logout";
+                Utils utils = new Utils();
+                Session["cartCount"]=utils.cartCount(Convert.ToInt32(Session["userId"])).ToString();
             }
             else
             {
                 lbLoginOrLogout.Text = "Login";
+                Session["cartCount"] = "0";
             }
 
         }
@@ -46,6 +49,20 @@ namespace Snackster.User
             {
                 Session.Abandon();
                 Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void lbRegisterOrProfile_Click(object sender, EventArgs e)
+        {
+            if (Session["userId"] != null)
+            {
+                lbRegisterOrProfile.ToolTip = "User Profile";
+                Response.Redirect("Profile.aspx");
+            }
+            else
+            {
+                lbRegisterOrProfile.ToolTip = "User Registration";
+                Response.Redirect("Registration.aspx");
             }
         }
     }
