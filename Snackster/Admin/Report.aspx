@@ -11,7 +11,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="container">
-                                    <div>
+                                    <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <label>From Date</label>
                                             <asp:RequiredFieldValidator ID="rfvFromDate" runat="server" ForeColor="Red" ErrorMessage="*" SetFocusOnError="true" Display="Dynamic" ControlToValidate="txtFromDate"></asp:RequiredFieldValidator>
