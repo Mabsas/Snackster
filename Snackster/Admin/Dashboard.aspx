@@ -11,7 +11,12 @@
                         <div class="card widget-card-1">
                             <div class="card-block-small">
                                <i class="icofont icofont-muffin bg-c-blue card1-icon"></i>
-                                 <span class=""></span>
+                                 <span class="text-c-blue f-w-600">Categories</span>
+                                <h4>5</h4>
+                                <div>
+                                    <span class="f-left m-t-10 text-muted"></span>
+                                      <a href="Category.aspx"><i class="text-c-blue f-16 icofont icofont-eye-alt"></i>View Details</a>
+                                </div>
                             </div>
                             <!-- end card-header -->
 
